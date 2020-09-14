@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> 中英打字 模擬練習 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .container-fluid {
+        padding-top: 50px;
+      }
+      .block {
+        padding-bottom: 40px;
+        padding-top: 80px;
+      }
+      blockquote {
+        font-size: 20px;
+      }
+      footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 16px;
+      }
+      .up-arrow {
+        color: #d4e4ff;
+        font-size: 25px;
+      }
+
+      footer a:hover {
+        color: #777;
+        text-decoration: none;
+      }
+      input[type=radio]{
+        position: relative;
+        top: 6px;
+        transform:scale(1.9);
+      }
+      .start-btn {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+    </style>
+    <script>
+      $(document).ready(function(){
+        $("input[name='category']").change(function(e){
+          if($(this).val() == "ch"){
+            $(".next-btn").attr("href", "/typing-ch.html");
+            $(".sub-title").html('中文輸入評分規則');
+            $("blockquote").html(
+              '<p><b>\
+              一、正確字：<br>\
+              依照試題輸入相同的字視為正確字，每輸入正確一字計得1字。<br>\
+              <br>\
+              二、錯打字：<br>\
+              輸入與試題不同的字視為錯打字，每錯打一字計錯誤1次。<br>\
+              <br>\
+              三、多打字：<br>\
+              較試題多輸入不需輸入的字視為多打字，每多打一字計錯誤1次。<br>\
+              <br>\
+              四、漏打字：<br>\
+              依照試題應輸入而未輸入的字視為漏打字，每漏打一字計錯誤1次。<br>\
+              <br>\
+              五、顛倒字：<br>\
+              在一行中如二連續單字有前後顛倒，計錯誤1次。<br>\
+              <br>\
+              <b class="text-danger">六、罰則：<br>\
+              每錯誤1次扣該列正確字數0.5字，扣至0字為止，但錯誤次數仍累計至錯誤率。<br>\
+              </b><br>\
+              七、以列計算每列淨字數：<br>\
+              該列所有正確字數扣除因錯打、多打、漏打所扣之字數即為淨字數，淨字數不得小於0。<br>\
+              <br>\
+              八、錯誤率：<br>\
+              錯誤率若≧10％，該次成績不予計算。<br>\
+              <br>\
+              <b class="text-info">九、成績計算<br>\
+              (一)、每分鐘平均字數＝每列淨字數之總和÷測驗時間（分鐘）<br>\
+              (二)、錯誤率計算＝總錯誤次數÷應輸入字數</b><br>\
+            </b></p>'
+            );
+          }else{
+            $(".next-btn").attr("href", "/typing-en.html");
+            $(".sub-title").html('英文輸入評分規則');
+            $("blockquote").html(
+              '<b>一、每行長度：<br>\
+              依提供之題目長度為準，除每段最後一行外，最少不得少於61格，最多不得多於76格，否則計一次錯誤。<br>\
+              <br>\
+              二、換行：<br>\
+              依原稿長度於每行結束時，應按[Enter]鍵換至下一行繼續。若於換行時多按一空格，計一次錯誤(行尾超過二個空格最多只計二次錯誤) 。<br>\
+              <br>\
+              三、分段縮格：<br>\
+              每段首應內縮5格空格或按[Tab]鍵，不計入擊數。但若輸入之空格數量不符時仍計錯誤一次。<br>\
+              <br>\
+              四、標點後的空格數：<br>\
+              句號(.) 、冒號(: ) 、問號(?)及驚嘆號(!)後各空二格，其它標點後只空一格。<br>\
+              縮寫字之句點後，如O.K.MR.MRS.等，應照該縮寫字全部拼出後所規定的空格予以空格，再接下一字，即在句末應空二格，否則空一格。<br>\
+              <br>\
+              五、破折號：<br>\
+              破折號須以兩個連接號（HYPHENS）合成，前後均不留空格；如破折號打在行首，則其後須空一格。<br>\
+              <br>\
+              六、連續二單字前後顛倒：<br>\
+              在一行中如二連續單字有前後顛倒，作錯誤一次計算。<br>\
+              <br>\
+              七、漏行：<br>\
+              如有漏行，則該行單字均各計錯誤一次。<br>\
+              <br>\
+              八、一行重打：<br>\
+              如有一行重打，則該行計錯誤一次，擊數不計，如有錯、漏字照扣，行長不足61格或多於76格仍計錯誤一次。<br>\
+              <br>\
+              九、上、下行顛倒：<br>\
+              如有上、下行顛倒，則行號小的一行視做漏打與重打各一次。<br>\
+              即該行計錯誤一次，行內各單字均各計錯誤一次，該行擊數不計，該行如有錯字照扣，行長不足61格或多於76格仍計錯誤一次。<br>\
+              <br>\
+              十、最後一字：<br>\
+              於測驗終了之際，最後一個單字若未輸入完全，將針對已輸入字元計入擊數且不計錯誤；但最後一個單字若打錯，則已輸入字元將計入擊數並計錯誤一次。<br>\
+              <br>\
+              十一、一般規則：<br>\
+              凡一行中有漏打、多打、重打、拼錯或與原印試題不符之單字（顛倒另有規定），均各計錯誤一次(一字最多只計一次錯誤) 。<br>\
+              <br>\
+              十二、總打擊數之計算：<br>\
+              (A)原試題每段均視為一連續之一行，如行末為破折號或連字號時，均予加計空格數，連字號不計擊數，按大寫鍵及跳位鍵亦不計擊數。<br>\
+              <br>\
+              (B)如一段已全部打完而打至下一段時，則自此段原題之第一個字元開始起至此段原題之最後一字元止，包含其間所有字元（不論是否錯誤）、空格數及最後換行[Enter]鍵合計為此段之打擊數。<br>\
+              <br>\
+              (C)打擊之最後一段自此段原題之第一個字元開始起至此段最後實際打出之原題中之字元止，包含其間所有字元（不論是否錯誤）空格數及最後換行[Enter]鍵合計為此段之打擊數。<br>\
+              <br>\
+              (D)自原題之第一段起至實際打擊之最後一段止，各段打擊數合計為總打擊數。<br>\
+              <br>\
+              <b class="text-danger">十三、罰則：<br>\
+              每錯誤一次扣總擊數二十擊。<br>\
+              </b><br>\
+              <b class="text-info">十四、成績計算：<br>\
+              每分鐘平均字數＝(總打擊數－錯誤×20) ÷5÷測驗時間(分鐘)</b></b>'
+            );
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: rgba(255, 255, 255, 0.75);">
+      <div class="text-center">
+        <h1 id="head"><b> 中英打字 模擬練習 </b></h1>
+      </div>
+      <div class="block text-center">
+        <h2><b> 選擇練習語言 </b></h2>
+          <div class="col-sm-4"></div>
+          <div class="col-sm-2">
+            <div class="radio">
+              <h3><label><input type="radio" name="category" value="ch" checked> 中文輸入 </label></h3>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="radio">
+              <h3><label><input type="radio" name="category" value="en"> 英文輸入 </label></h3>
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+      </div>
+      <div class="block">
+        <h2 class="text-center sub-title"><b> 中文輸入評分規則 </b></h2>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-7">
+          <blockquote>
+            <p><b>
+              一、正確字：<br>
+              依照試題輸入相同的字視為正確字，每輸入正確一字計得1字。<br>
+              <br>
+              二、錯打字：<br>
+              輸入與試題不同的字視為錯打字，每錯打一字計錯誤1次。<br>
+              <br>
+              三、多打字：<br>
+              較試題多輸入不需輸入的字視為多打字，每多打一字計錯誤1次。<br>
+              <br>
+              四、漏打字：<br>
+              依照試題應輸入而未輸入的字視為漏打字，每漏打一字計錯誤1次。<br>
+              <br>
+              五、顛倒字：<br>
+              在一行中如二連續單字有前後顛倒，計錯誤1次。<br>
+              <br>
+              <b class="text-danger">六、罰則：<br>
+              每錯誤1次扣該列正確字數0.5字，扣至0字為止，但錯誤次數仍累計至錯誤率。<br>
+              </b><br>
+              七、以列計算每列淨字數：<br>
+              該列所有正確字數扣除因錯打、多打、漏打所扣之字數即為淨字數，淨字數不得小於0。<br>
+              <br>
+              八、錯誤率：<br>
+              錯誤率若≧10％，該次成績不予計算。<br>
+              <br>
+              <b class="text-info">九、成績計算<br>
+              (一)、每分鐘平均字數＝每列淨字數之總和÷測驗時間（分鐘）<br>
+              (二)、錯誤率計算＝總錯誤次數÷應輸入字數</b><br>
+            </b></p>
+          </blockquote>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12 start-btn">
+          <a href="/typing-ch.html" class="btn btn-lg btn-primary next-btn"> 開始作答 </a>
+        </div>
+      </div>
+      <footer class="text-center">
+        <a class="up-arrow" href="#head" title="TO TOP">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p><b> 中英打 模擬練習 <br>
+          <span>Photo by
+            <a href="https://unsplash.com/@jphnry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John-Paul
+              Henry</a>
+            on
+            <a
+              href="https://unsplash.com/s/photos/keyboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+          </span>
+        </b></p>
+      </footer>
+    </div>
+  </body>
+</html>
