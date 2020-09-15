@@ -256,7 +256,9 @@
 
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
-            var timeInterval = setInterval(function () {
+            var flag = true;
+            var timeInterval = setInterval(function() {
+              if(flag == true){
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
 
@@ -270,6 +272,7 @@
                 display.textContent = "剩餘時間: " + minutes + ":" + seconds;
 
                 if (--timer < 0) {
+                    flag = false;
                     const question = $("#question").val();
                     const answer = $("#answer").val();
                     clearInterval(timeInterval);
@@ -283,7 +286,7 @@
                     // Do something
                     var resList = getResult(question, answer)
                     $(".content").html('<div class="text-center text-info" style="padding-top: 200px; padding-bottom: 200px;"><h2>' 
-                      + "每分鐘平均字數: " + resList[0] + "字" + "<br><br>" + "錯誤率: " + resList[1] + "%");
+                      + "每分鐘平均字數: " + resList[0] + " 字" + "<br><br>" + "錯誤率: " + resList[1] + "%");
                     if(resList[1] >= 10){
                       $(".content").append("<br><br>未通過!");
                       $(".content").attr("class", "text-center text-danger");
@@ -300,8 +303,9 @@
                       $(".content").append("<br><br>未通過!");
                       $(".content").attr("class", "text-center text-danger");
                     }
-                    $(".content").append('<br><br><a href="/" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>')
+                    $(".content").append('<br><br><a href="/" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>');
                 }
+              }
             }, 1000);
         }
         window.onload = function () {
