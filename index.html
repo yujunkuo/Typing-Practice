@@ -56,7 +56,7 @@
       $(document).ready(function(){
         $("input[name='category']").change(function(e){
           if($(this).val() == "ch"){
-            $(".next-btn").attr("href", "Typing-Practice/typing-ch.html");
+            $(".next-btn").attr("href", "/typing/typing-ch.html");
             $(".sub-title").html('中文輸入評分規則');
             $("blockquote").html(
               '<p><b>\
@@ -90,7 +90,7 @@
             </b></p>'
             );
           }else{
-            $(".next-btn").attr("href", "Typing-Practice/typing-en.html");
+            $(".next-btn").attr("href", "/typing/typing-en.html");
             $(".sub-title").html('英文輸入評分規則');
             $("blockquote").html(
               '<b>一、每行長度：<br>\
@@ -208,7 +208,7 @@
       </div>
       <div class="row text-center">
         <div class="col-sm-12 start-btn">
-          <a href="Typing-Practice/typing-ch.html" class="btn btn-lg btn-primary next-btn"> 開始作答 </a>
+          <a href="/typing/typing-ch.html" class="btn btn-lg btn-primary next-btn"> 開始作答 </a>
         </div>
       </div>
       <footer class="text-center">

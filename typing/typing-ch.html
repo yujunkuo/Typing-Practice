@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> 中英打字 模擬練習 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .container-fluid {
+        padding-top: 50px;
+      }
+      .header {
+        padding-bottom: 40px;
+        padding-top: 10px;
+      }
+      blockquote {
+        font-size: 20px;
+      }
+      footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 16px;
+      }
+      .up-arrow {
+        color: #d4e4ff;
+        font-size: 25px;
+      }
+
+      footer a:hover {
+        color: #777;
+        text-decoration: none;
+      }
+      input[type=radio]{
+        position: relative;
+        top: 6px;
+        transform:scale(1.9);
+      }
+      .start-btn {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      label {
+          font-size: 24px;
+      }
+      #question, #answer {
+          font-size: 16.5px;
+      }
+    </style>
+    <script>
+        const c1 = `       你以為到港口、海產店現殺，沙西米一定品質佳，但研究結果顯示，
+源頭的漁獲處理就已經有微生物超標汙染，原因包括作業環境不佳、魚隻
+落地宰殺、未充分清洗處理、刀具未消毒乾淨，沒有冰箱儲存等。在實地
+訪查產地或消費地販售市場時，也曾見過不少魚放在地上拍賣，生魚片區
+抽驗到大腸桿菌、腸炎弧菌、金黃色葡萄球菌等汙染食材之病原體。
+       無菌加工是相對於傳統的罐頭處理 發展出來的先進技術。罐頭加工將
+食品原料殺菁後，裝至鐵罐並封口隔絕外界環境，再透過殺菌釜高溫滅菌
+將包裝內部的微生物都消滅後，才能常溫保存。但是這樣處理過後的食品
+因經過長時間加熱消毒，風味並不好。因此科學家想到，在原料填充至罐
+頭前先進行處理，而填充的容器也同樣弄好，使材料與容器均達到無菌狀
+態，最後保持這種環境中灌入並密封，如此便能降低滅菌的溫度與時間，
+讓產品美味依舊，譬如果汁就是這種方式來保存販售的最成功商品之一。
+       我們年輕人每天埋頭工作並養育子女，有時候可能根本就忘了要多關
+心老人家，甚至沒有意識到爸媽已經頭髮斑白與身體變瘦弱，印象還停留
+在以前樣那身強體壯的狀況，那樣有力氣在吃飯過生活並且關愛或責罵孩
+子。但事實上，父母親的身心狀態都已經逐漸在轉變當中。陪伴並關懷體
+諒等互動，真的需要及時執行，不要等到日後才在後悔。
+       整棟建築要每一層樓都陷入火海的情況其實很罕見，但了解內部結構
+後不難發現，這棟大樓其實在火災發生之前就隱藏著三大致命缺陷。壹是
+外牆包覆層具可燃性。貳為消防安全設備未完全發揮功效。參即僅有一條
+逃生通道。綜合上面的原因構成了這棟大樓的火災死亡鐵三角。在如此不
+安全的建築環境下，若遇祝融情形，先不談如何逃生避難，光是住在這裡
+生活過日子就已經算暗藏許多可能會產生的危險了。
+       採購時該如何挑選青花菜呢？就選擇球體完整呈現香菇形，外觀無缺
+且沒有嚴重的變形現象。當球體過於成熟情況，其上方小花蕾黃化並顯得
+粗鬆，甚至有黃色花瓣出現，這樣口感和品質較差。切開後若發現內部呈
+現空洞狀，可能種植環境溫度太高、氮肥使用過多所造成的；菜心若成褐
+或黑色，則應該是太晚採收或者冷藏不當導致。在烹調上，川燙後沾點醬
+油或擠美乃滋已十分美味了，若想改清炒方式品嚐，則可先用水煮方式弄
+熟，油鍋爆香蒜頭後把燙熟的綠椰菜加入，略微快炒攪拌並調味，即為一
+道美味可口的料理。這樣健康又在地的蔬菜，請務必把握產季開心品嚐！
+       當時間快轉到二十一世紀，我們不用出門打獵，而是打開冰箱就有雞
+豬魚牛，貯物櫃還有一堆泡麵餅乾飲料時，現代人面臨的危機早已與古人
+天差地遠。目前社會面臨的最大健康危機就是合併糖尿病與肥胖的問題。
+關於會提出糖尿病與肥胖這些事，並非醫學界的陰謀啊。已經有太多的研
+究證明，假使一個人患有這類型症狀的同時，身體機能會逐漸變差，長期
+來講會帶來腎臟、神經與眼睛等處的病變，而大家很擔心的心臟及血管疾
+病的機率也會增加。從此我們就會發現，一旦罹患糖尿病加肥胖，等於全
+身狀況都變差。目前，這疾病可說是世界上的前五大死因之一。
+       在全球消費市場中，主要流通的咖啡豆種類大致可分為阿拉比卡以及
+羅布斯塔二大類！然而在過去傳統商業在使用層面，有許多較高品質且風
+味層次多並杯測分數偏高的咖啡豆為阿拉比卡豆，因此常運用於現煮飲品
+中。而羅布斯塔豆則由於其較為苦澀，而味道平實且相對容易種植、產量
+大與咖啡因含量較高、偶爾帶有點燒塑膠的不良氣味特色等，多被應用在
+即溶或罐裝飲料上，價格相較來得低廉！`;
+      const c2 = `       少數店家想讓顧客飲用波霸奶茶嚼起來更有勁，會摻進小麥蛋白、粟
+粉或者食用化製澱粉等，確實符合法規所定的添加物，並非某些新聞報導
+所猜測的塑膠原料。那些偷放工業用黏著劑，吃下肚恐怕傷害腎小管之黑
+心行為，涉及廠商良心和政府監督議題，應列為重點稽查對象擴大檢驗範
+圍。呼籲消費者切莫恐慌，少量攝入並不會立刻造成健康危害。
+       消費者可別看到印上靈芝字樣的東西就心動買單。因為各產品的多醣
+組成差異很明顯，研究證實某些能夠促進免疫細胞活性，達到提升抵抗力
+的效果；多方面諮詢醫生或者營養師等專業人員建議，能夠認識並且照顧
+好自己身體狀況。保健食品種類繁多，但未必都適用每個人，大致上以預
+防為主要目標，並非有治療功效，攝取量應遵循產品說明和建議，不宜過
+量或減少，否則可能會增加身體負擔。注意均衡飲食與養成運動好習慣，
+並且正常作息、別再胡亂熬夜晚睡，這才是維持身體健康之良策。
+        每天認真吃好三頓飯可說是維持健康的做法，若想減肥不吃主食，實
+在不可行。目前已知所需營養素都需從各種食物獲得。蛋白質、脂肪與碳
+水化合物皆對身體生理作用具有影響。汁多味美的水果，其礦物質且糖類
+也多，還有人體非必需之脂肪酸，很容易讓人稍不留意就吃過量，食用方
+式相當便利，無需烹調熱熟即可生食。加上甘甜合口，結果未必能達到瘦
+身，反而導致愈趨肥胖，造成營養不均衡問題。
+        食用靈芝行為在歷史上已經有兩千多年，自古相傳能治百病、延年益
+壽，民眾對它普遍印象就是珍貴滋補藥材，有助身體健康。最後要提醒大
+家的是各種保健食品未必皆適合每個人，基本上它還是當作預防為主，不
+具有治療功效。每天攝取劑量也應遵照該項產品相關說明和建議。不要胡
+亂飲用，像是覺得多吃會更強壯，這種可能造成反效果增加體內負擔。
+        臺灣的糧食自給率是以熱量為基礎計算單位，然而三大來源是碳水化
+合物、蛋白質與油脂。雜糧收穫後，經過篩選、分級與加工，最後變成市
+面上真正能夠出售的原料，這些過程不能僅靠政府。除了代耕體系，還要
+做好選別、包裝和集貨中心。現在黃豆產區分布在雲嘉南，當產業鏈各方
+相關單位成為命運共同體，所謂的大糧倉計畫輔導措施才會有效進行。
+        從太空中俯瞰地球表面，景象壯觀與震撼。譬如撒哈拉沙漠等降雨量
+稀少地區，樣貌會以黃色顯示，亞馬遜河附近為整片潮溼的熱帶雨林，因
+此呈現出綠色。地球表面之水範圍是陸地區域的三倍大小，而且山脈幾乎
+都連綿一起就像棒球縫線。尤其從白天漸轉入黑夜時，清楚地顯露出哪些
+算作人類平常活動空間、哪裡為大自然的地盤，當下充滿讚嘆與驚艷。
+        米飯是不可或缺的糧食。能夠吃飽喝足其實是我們的福報。大家都知
+道日本人不分貧富貴賤，會在用餐前說一句話。這個耳熟能詳的言辭，許
+多人認為應該就是說明我要開動了的意思，然這並非原本所表達之涵義。
+曾有專家解釋過，我們是領受了動植物的生命得以進食。人類才能夠繼續
+延續與生存，並且向神明和大自然表達尊敬與感激。後來也作為致謝辛勤
+耕耘的農民與其它提供食物之勞動者，才逐漸形成這項餐桌禮儀。
+        紅棗味甘性溫，被當作具補氣、養血安神又抗衰老之功效，應該多運
+用這款食材做為料理，將有益身體健康。但其實它仍然特別禁忌的，譬如
+某些人體質或疾病因素不適宜食用。像女性月經期間身體變得較為敏感、
+容易感到疲憊，常會出現眼睛或下肢水腫的狀況，這就是濕氣重表現。燥
+熱體質者若濫用紅棗，這極有可能會引發經血過多造成傷害健康。如果食
+用方法不恰當，效果就沒有辦法符合期望，甚至事倍功半徒勞而無功。`;
+      const c3 = `       來自美國的煤灰烘焙室由一名藝術家所打理，內部所有的烘焙食品例
+如餅乾與蛋糕和馬卡龍都是使用煤灰製造而成，也就是說全都無法吃進嘴
+裡啊！為了探討關於地球氣候急遽轉變以及煤炭能源和開採礦類、燃燒竹
+炭等對地球帶來了不可逆轉且巨大的壞影響，活動方希望用這種方式引起
+大家關注及重視氣候變遷還有能源汙染等環境問題。主辦者也呼應一句英
+國諺語：自己不可想留著蛋糕卻又想吃掉，即凡事無法兩全其美。
+       所羅門石龍子也被稱作猴尾蜥為世界上體型最大石龍子，若包含尾巴
+身長幾乎接近九十公分。牠們有著一些與普通爬蟲類不太相同的行為，大
+多數人刻板印象總認為爬蟲動物在行事作風上是無情冷漠的，但牠們卻是
+生活在同個團體中，這對於獨行俠蜥蜴來說極其少見；幾乎所有爬蟲類在
+繁衍時期產卵後就完全不管孩子成長情形，但這些樹棲石龍子會由母親生
+出小蜥蜴後繼續照顧六個月至一年左右，類似哺乳動物在照顧幼兒一般。
+       為了打造出明亮有神的靈魂之窗，女性們對雙眼保養尤其重視，而使
+用眼部卸妝方式洗去美容產品負擔是眾所周知清潔法，但長期下來這樣絕
+對是不足夠！它只發揮了洗淨而沒有保養功能，因此當夜晚徹底地卸妝後
+建議以一般綠茶包加入溫水再拿綿花棒輕擦在睫毛根部上，綠茶裡所含水
+溶性維生素和咖啡因能刺激生長，另外緊記常使用小梳子整理，這樣做可
+清除灰塵和汙垢且毛囊會有良好的血液供應，長出更健康濃密的睫毛！
+       烏干達咖啡生產量在世界排名第八，跟祕魯不相上下並且在非洲排名
+第二，僅次於衣索比亞。在過去一個世紀裡咖啡已晉升為境內最重要及有
+巨大價值產業之一，總額已超過四億美元占整體烏干達全國的出口營收入
+兩成，而其中約九成產量是由小農所提供。但除了氣候變遷影響之外，他
+們通常無法取得營養肥料和高品質種子等基本工具、缺少銀行貸款和業界
+培訓與市場數據等協助、沒有平滑路面和加工設備等基礎建設，再加上多
+數耕地面積都不大，隨著農村人口呈級數遞增而被劃分得更小了，法律無
+法保障他們的土地權利，因此可能隨時會被有錢鄰居或外國投資客搶走。
+       要如何不斷創造活力、少生氣和多激勵自己是現在多數民眾很熱衷探
+討議題之一，很多人嘗試著透過提升專注力帶來正面效益以期望改善身心
+靈狀態。生活中巨大壓力無處不在經常讓我們忽略需求與自身極限，過度
+消耗體力或一再拒絕正視重要需求者就是沒有善待自己，長期下來反而導
+致健康受損與精神緊繃且愉快感常稍縱即逝，而保持高度專注可以讓人們
+更加懂得來照顧自己，協助我們整理思緒和調解情緒，並且給身體有充分
+休息時間。建議大家先試著找出那些感到心滿意足或者樂於投入之事，當
+實際動作就會發現腦中煩憂一掃而空，這時才能算是真正徹底放輕鬆了。
+       除了全球普及的健美操和重訓之外，喜愛運動者或許會對這款類似玩
+樂般的新興健身項目深感興趣。最近有些國外健身室開始引進一種項目叫
+作激光射擊，這種活動不僅新穎有趣還能快速地燃燒大量脂肪。它算是多
+人組隊進行的射擊遊戲，但武器非我們想像如彩彈和氣球，遊戲中玩家穿
+著一件裝設感應器背心然後拿激光槍進行射擊，場地裡會有各式障礙物及
+斜坡組成之高牆，大家可以利用高牆爬上跳下或是拿物品阻擋對方進攻。
+       美國銀行針對金錢會讓人際關係產生怎樣影響做了一項有趣調查，實
+際尋問上千名國籍不同之受訪者，結果發現金錢是友誼添加壓力的第四大
+原因，受訪者接近一半表示他們寧可和朋友們談論愛情、家庭生活或較為
+私密事情也不想提及金錢，覺得跟他人說這種事會感到不安和尷尬，更有
+接近四成美國人曾因朋友欠自己債務而逃避、不與他們見面的親身經歷。 `;
+
+      const c_list = [c1, c2, c3];
+
+        function getResult(question, answer){
+          x = [];
+          var i = 0;
+          var j = 0;
+          var correct = 0;
+          var error = 0;
+          while(i < question.length-1 && j < answer.length-1){
+            // 顛倒字
+            if((question[i] == answer[j+1]) && (question[i+1] == answer[j])){
+              error++;
+              i = i+2;
+              j = j+2;
+            }
+            // 正確字
+            if(question[i] == answer[j]){
+              correct++;
+              i++;
+              j++;
+            }
+            // 錯打字
+            else if(question[i+1] == answer[j+1]){
+              error++;
+              i++;
+              j++;
+            }
+            // 多打字
+            else if(question[i] == answer[j+1]){
+              error++;
+              j++;
+            }
+            // 漏打字
+            else if(question[i+1] == answer[j]){
+              error++;
+              i++;
+            }
+          }
+          // 判斷最後一個字元是否正確
+          if(answer[j] == question[i]){
+            correct++;
+            i++;
+            j++;
+          } else{
+            error++;
+            i++;
+            j++;
+          }
+
+          var cleanWord = correct - Math.floor(0.5 * error);
+          if(cleanWord < 0){
+            cleanWord = 0;
+          }
+          var wordPerMin = Math.round(cleanWord / 10);
+          var errorRate = Math.round(100 * (error / i));
+
+          return [wordPerMin, errorRate];
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var timeInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                if (minutes == "00") {
+                    $("#timer").attr("class", "text-danger pull-right")
+                }
+
+                display.textContent = "剩餘時間: " + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    const question = $("#question").val();
+                    const answer = $("#answer").val();
+                    clearInterval(timeInterval);
+                    $(".content").html(
+                      `
+                      <div class="text-center text-info" style="padding-top: 200px; padding-bottom: 200px;">
+                        <h2> 成績計算中... </h2>
+                      </div>
+                      `
+                    );
+                    // Do something
+                    var resList = getResult(question, answer)
+                    $(".content").html('<div class="text-center text-info" style="padding-top: 200px; padding-bottom: 200px;"><h2>' 
+                      + "每分鐘平均字數: " + resList[0] + "字" + "<br><br>" + "錯誤率: " + resList[1] + "%");
+                    if(resList[1] >= 10){
+                      $(".content").append("<br><br>未通過!");
+                      $(".content").attr("class", "text-center text-danger");
+                    } else if (resList[0] >= 80) {
+                      $(".content").append("<br><br>專業級!");
+                      $(".content").attr("class", "text-center text-warning");
+                    } else if (resList[0] >= 30) {
+                      $(".content").append("<br><br>進階級!");
+                      $(".content").attr("class", "text-center text-info");
+                    } else if(resList[0] >= 15){
+                      $(".content").append("<br><br>實用級!");
+                      $(".content").attr("class", "text-center text-success");
+                    } else {
+                      $(".content").append("<br><br>未通過!");
+                      $(".content").attr("class", "text-center text-danger");
+                    }
+                    $(".content").append('<br><br><a href="/" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>')
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            var tenMinutes = 6 * 1,
+                display = document.querySelector('#timer');
+            startTimer(tenMinutes, display);
+        };
+        $(document).ready(function(){
+            i = Math.floor(Math.random() * 3);
+            $("#question").html(c_list[i]);
+        });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: rgba(255, 255, 255, 0.75);">
+        <h1 class="header text-center"> 中文輸入 </h1>
+        <div class="content row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="question">題目區</label>
+                    <textarea class="form-control" rows="30" id="question" readonly>態，最後保持這種環境中灌入並密封， 如此便能降低滅菌的溫度與時間，讓產品美味依舊，譬如果汁就是這種方 式來保存販售的最成功商品之一。 </textarea>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="answer"> 作答區 </label>
+                    <label class="text-info pull-right" id="timer"> 剩餘時間: 10:00 </label>
+                    <textarea class="form-control" rows="30" id="answer"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <footer class="text-center">
+            <a class="up-arrow" href="#head" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            </a><br><br>
+            <p><b> 中英打字 模擬練習 <br>
+            <span>Photo by
+                <a href="https://unsplash.com/@jphnry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John-Paul
+                Henry</a>
+                on
+                <a
+                href="https://unsplash.com/s/photos/keyboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+            </span>
+            </b></p>
+        </footer>
+    </div>
+  </body>
+</html>
