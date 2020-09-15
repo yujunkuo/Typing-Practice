@@ -204,17 +204,17 @@
           var correct = 0;
           var error = 0;
           while(i < question.length-1 && j < answer.length-1){
-            // 顛倒字
-            if((question[i] == answer[j+1]) && (question[i+1] == answer[j])){
-              error++;
-              i = i+2;
-              j = j+2;
-            }
             // 正確字
             if(question[i] == answer[j]){
               correct++;
               i++;
               j++;
+            }
+            // 顛倒字
+            else if((question[i] == answer[j+1]) && (question[i+1] == answer[j]) && (question[i] != question[i+1])){
+              error++;
+              i = i+2;
+              j = j+2;
             }
             // 錯打字
             else if(question[i+1] == answer[j+1]){
@@ -234,11 +234,11 @@
             } 
           }
           // 判斷最後一個字元是否正確
-          if(answer[j] == question[i]){
+          if((i < question.length) && (j < answer.length) && (answer[j] == question[i])){
             correct++;
             i++;
             j++;
-          } else{
+          } else if((i < question.length) && (j < answer.length) && (answer[j] != question[i])){
             error++;
             i++;
             j++;
@@ -248,7 +248,7 @@
           if(cleanWord < 0){
             cleanWord = 0;
           }
-          var wordPerMin = Math.round(cleanWord / 3);
+          var wordPerMin = Math.round(cleanWord / 10);
           var errorRate = Math.round(100 * (error / i));
 
           return [wordPerMin, errorRate];
@@ -311,7 +311,7 @@
             }, 1000);
         }
         window.onload = function () {
-            var tenMinutes = 60 * 3,
+            var tenMinutes = 6 * 1,
                 display = document.querySelector('#timer');
             startTimer(tenMinutes, display);
         };
