@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> 英文輸入 模擬練習 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .container-fluid {
+        padding-top: 50px;
+      }
+      .header {
+        padding-bottom: 40px;
+        padding-top: 10px;
+      }
+      blockquote {
+        font-size: 20px;
+      }
+      footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 16px;
+      }
+      .up-arrow {
+        color: #d4e4ff;
+        font-size: 25px;
+      }
+
+      footer a:hover {
+        color: #777;
+        text-decoration: none;
+      }
+      input[type=radio]{
+        position: relative;
+        top: 6px;
+        transform:scale(1.9);
+      }
+      .start-btn {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      label {
+          font-size: 24px;
+      }
+      #question, #answer {
+          font-size: 15.4px;
+      }
+    </style>
+    <script>
+      const e1 = `     Quantum computing and AI aren't just two parallel research fields
+that happen to meet somewhere. They're more like a match made in
+heaven. The hotly anticipated quantum supremacy, when it unequivocally
+arrives, would be a landmark achievement in and of itself. However,
+it is not really about "when" we get to this milestone more than "how"
+to handle its after-effects. Big Data is the nexus between AI and
+quantum computers. The former needs data and lots of it to learn and
+improve its intelligence. The latter are well-equipped to deal with
+huge swaths of data in a time-efficient manner.
+     Sudden hearing loss is mostly treated using steroids, supplemented
+by HBOT. The steroids can be administered orally or through injection,
+either into the ear or intravenously. If steroids are administered
+within two weeks of the onset of the symptoms the prognosis is very
+good; if this treatment is supplemented by HBOT, the hearing of around
+three-quarters of patients shows a clear improvement.
+     Miranda Hollingshead, 27, was visiting the Crater of Diamonds State
+Park in Arkansas in a family outing. They'd been at the park for about
+an hour, when she decided to take a break at the base of a hill. She
+fired up the YouTube video and started watching. The park allows its
+visitors to search for diamonds in a designated 37.5-acre area.
+     Billions of tons of meltwater flowing into the world's oceans from
+the Greenland and Antarctic ice sheets could boost extreme weather and
+destabilize regional climate in a matter of decades, researchers said.
+The melting ice giants, especially the one atop Greenland, are poised to
+further weaken the ocean currents that move cold water south along the
+Atlantic Ocean's floor, while pushing tropical waters northward closer
+to the surface, scientists reported in the journal, Nature.
+     Users enter their name and ID number to find out whether they have
+been in close contact with someone infected. Those who have been are
+advised to stay home and get in touch with local health authorities.
+According to the WHO, signs of infection include fever, cough, and
+shortness of breath and breathing difficulties. In more severe cases,
+it can lead to pneumonia, SARS, kidney failure and even death.
+     Despite concerns, almost half believe the internet contributes to
+their identity, with a similar number suggesting it helps them feel
+better emotionally or less alone, while others admitted they would be
+lost without the internet altogether. The survey also shines a light
+on experiences of disabled young people, 54% of whom said they find
+it easier to be themselves online than offline.
+     Yasuke's origins remain a mystery as historical sources are scant.
+While some researchers believe he was from Mozambique, others suggest
+Sudan. Lockley suspects that Yasuke was abducted from his family as a
+child by Arab or Indian slave traders and trafficked through Arab
+countries and across the Indian Ocean. He likely worked as a slave
+and trained as a child soldier who fought in Gujarat and Goa in India,
+before being hired as a valet by Jesuit missionaries from Portugal. `;
+      const e2 = `     Michael Jordan, who grew up in Wilmington, North Carolina, close to
+where Florence came ashore as a Category 1 hurricane, has donated $2
+million to relief and recovery agencies. "It's truly devastating for me
+to see the damage that Hurricane Florence is doing to my beloved home
+state of North Carolina and to the surrounding areas," Jordan, who is
+the owner of the Charlotte Bobcats of the NBA, said last week in a
+statement posted on the team's website announcing its charity work.
+     Kipchoge's split times left many viewers scratching their heads as
+they tried to work out just how fast the race was won. The Kenyan was
+led out from the start by three pacemakers and he clocked the first 10
+kilometers in world record pace. Shortly after the halfway mark, all
+three pacemakers dropped out, leaving Kipchoge to run the final 10 miles
+alone. But where most athletes would struggle, Kipchoge continued to
+defy the odds and instead of falling off the pace, he actually sped up.
+     Prince William went on rhino spotting trip in Namibia to learn more
+about conservation and the illegal wildlife trade in Africa. The Duke
+of Cambridge went rhino spotting with a team of local rangers on a 5am
+trek in the country's mountainous region, Kensington Palace said in
+a tweet. He praised the "beauty and sheer remoteness" of Namibia's
+landscape as he spotted a rare black rhino after five hours. The
+Duke of Cambridge said he was humbled by the rangers dedication towards
+protecting Namibia's rhinos population from poachers.
+     "Q" words are always tough, especially those without a "u" in them.
+Players can monetize with the word qapik, which is a unit of currency
+in Azerbaijan. The updated version of the players dictionary continues
+to follow some of the game's most important rules. Words must still
+come from the standard dictionary. No abbreviations, capitalized words
+or words with punctuation are allowed.
+     Every week seems to bring new confirmation we've officially entered
+the era of too much tourism. There's been sand pilfering in Sardinia
+and Venice visitors threatened with fines for sitting down. Over in
+Rome, there's been selfie-based violence and illegal bathing. In
+Madrid, stringent rules have been put in place to handle Airbnb as
+locals fear being priced out of the city.
+     FIFA has suspended Sierra Leone from world football over claims of
+government interference. The suspension comes after FIFA sent a letter
+to the country's Minister of Sports expressing "grave concern" about the
+removal of the football association president, Isha Johansen and the
+association's General Secretary, Christopher Kamara.
+     But a study released this week found that the Brazilian bird is now
+extinct in the wild. The Spix's macaw is one of eight bird species,
+half of them in Brazil, confirmed extinct or suspected extinct in the
+report from BirdLife International. Deforestation is a leading cause
+of the Spix's macaw's disappearance from its natural habitat, according
+to the report. For the first time, extinctions on the mainland are
+outpacing those on islands, the study says. `;
+      const e3 = `     People also shopped more on their phones depending on what day it
+was. Adobe found that smartphones accounted for slightly more traffic
+than desktop computers on Thanksgiving, but not on Black Friday. You
+may not whip out your laptop when you have friends and family over,
+but you'll definitely pull out your phone for some sneaky browsing.
+     Nocturnal primates not only regularly consume alcohol in fermented
+nectars, saps and fruits, but they also seem to love it, finds new
+research on two night-prowling primate species: the aye-aye and the
+slow loris. Aye ayes (Daubentonia madagascariensis) are lemurs native
+to Madagascar that have an elongated, bony finger for detecting and
+extracting grubs from decaying tree trunks.
+     Finally, they found a catamaran company that agreed to ferry them
+to Puerto Rico. They chose that island over St. Croix because it had
+avoided a direct hit from Irma and therefore had more outbound flights
+scheduled. Upon arrival, though, the family couldn't afford the $1,500
+per person being charged for a flight out.
+     Currently, cognitive behavioral therapy is considered the best form
+of treatment for insomnia, according to the American Academy of Sleep
+Medicine. During treatment, people learn to identify and change the
+harmful thoughts and behaviors that are preventing them from getting
+enough sleep, the researchers explained.
+     What makes this lunar photobomb so special is that we're seeing a
+side to the moon we Earthlings never see from our planet's surface.
+The moon is tidally locked with Earth, meaning the moon's spin matches
+its orbit, ensuring the same face is always facing Earth. To see the
+lunar far side, we need to send a camera beyond the moon's orbit and
+look back at Earth, which is exactly what the NASA Earth Polychromatic
+Imaging Camera (EPIC) does. And the sequence of images have picked
+out some beautiful detail in the moon's terrain.
+     Unusually, the rise is not in terms of patient numbers, which have
+in fact fallen, but by people living longer with greater numbers of
+increasingly complex conditions to manage. Each day, Mowle will have
+contact with 40 to 50 patients, he explained, with 60% of those in
+person and the rest through phone consultations.
+     Velasco Archer noted that this type of cranial deformation is more
+likely found in the southern part of Mesoamerica rather than in the
+Mexican central region where Teotihuacan is located. Encrusted with
+two round pyrite stones, the skull's front teeth confirmed the woman
+was a foreigner in Teotihuacan. The dental decoration technique is
+typical of Mayan regions in southern Mexico and Central America.
+     At some point in time, after the first man and woman were buried,
+a second man was buried in a grave inside a wooden structure that was
+added to the original tomb. This man was also buried with his ax,
+although it was not as large as the ax from the original burial, the
+researchers said. Nielsen thinks the second man could have been a
+relative or successor of the first man. `;
+
+      const e_list = [e1, e2, e3];
+
+        function getResult(question, answer){
+          var temp = Array(question.length+1).fill(0)
+          var dp = Array(answer.length+1).fill(temp)
+          for (let i=1; i<question.length+1; i++) {
+            dp[i][0] = 0;
+          }
+          for (let i=1; i<answer.length+1; i++) {
+            dp[0][i] = 0;
+          }
+          for (let i=1; i<question.length+1; i++) {
+            for (let j=1; j<answer.length+1; j++) {
+              if (question[i-1] == answer[j-1]){
+                dp[i][j] = dp[i-1][j-1] + 1;
+              }
+              else{
+                dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+              }
+            }
+          } 
+          var result = dp[question.length][answer.length];
+          var wordPerMin = Math.round(result / 10);
+          return wordPerMin;
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var flag = true;
+            var timeInterval = setInterval(function() {
+              if(flag == true){
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                if (minutes == "00") {
+                    $("#timer").attr("class", "text-danger pull-right")
+                }
+
+                display.textContent = "剩餘時間: " + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    flag = false;
+                    var question = $("#question").val();
+                    var answer = $("#answer").val();
+                    //clearInterval(timeInterval);
+                    $(".content").html(
+                      `
+                      <div class="text-center text-info" style="padding-top: 150px; padding-bottom: 200px;">
+                        <h2> 成績計算中... </h2>
+                      </div>
+                      `
+                    );
+                    // Do something
+                    question = question.replace(/\s+/g, '');
+                    answer = answer.replace(/\s+/g, '');
+                    var res = getResult(question, answer);
+                    if (res >= 50) {
+                      $(".content").html('<div class="text-center text-warning" style="padding-top: 150px; padding-bottom: 200px;"><h2>' 
+                      + '每分鐘平均字數: ' + res + ' 字<br><br>專業級!'
+                      + '<br><br><br><a href="/Typing-Practice" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>');
+                    } else if (res >= 30) {
+                      $(".content").html('<div class="text-center text-info" style="padding-top: 150px; padding-bottom: 200px;"><h2>' 
+                      + '每分鐘平均字數: ' + res + ' 字<br><br>進階級!'
+                      + '<br><br><br><a href="/Typing-Practice" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>');
+                    } else if(res >= 15){
+                      $(".content").html('<div class="text-center text-success" style="padding-top: 150px; padding-bottom: 200px;"><h2>' 
+                      + '每分鐘平均字數: ' + res + ' 字<br><br>實用級!'
+                      + '<br><br><br><a href="/Typing-Practice" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>');
+                    } else {
+                      $(".content").html('<div class="text-center text-danger" style="padding-top: 150px; padding-bottom: 200px;"><h2>' 
+                      + '每分鐘平均字數: ' + res + ' 字<br><br>未通過!'
+                      + '<br><br><br><a href="/Typing-Practice" class="btn btn-lg btn-default"> 重新測驗 </a></h2></div>');
+                    }
+                }
+              }
+            }, 1000);
+        }
+        window.onload = function () {
+            var tenMinutes = 6 * 1,
+                display = document.querySelector('#timer');
+            startTimer(tenMinutes, display);
+        };
+        $(document).ready(function(){
+            i = Math.floor(Math.random() * 3);
+            $("#question").html(e_list[i]);
+        });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: rgba(255, 255, 255, 0.75);">
+        <h1 class="header text-center" id="head"> 英文輸入 </h1>
+        <div class="content row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-5">
+                <div class="form-group">
+                    <label for="question">題目區</label>
+                    <textarea class="form-control question-area" rows="30" id="question" readonly></textarea>
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <div class="form-group">
+                    <label for="answer"> 作答區 </label>
+                    <label class="text-info pull-right" id="timer"> 剩餘時間: 10:00 </label>
+                    <textarea class="form-control answer-area" rows="30" id="answer"></textarea>
+                </div>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+        <footer class="text-center">
+            <a class="up-arrow" href="#head" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            </a><br><br>
+            <p><b> 英文輸入 模擬練習 <br>
+            <span>Photo by
+                <a href="https://unsplash.com/@jphnry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John-Paul
+                Henry</a>
+                on
+                <a
+                href="https://unsplash.com/s/photos/keyboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+            </span>
+            </b></p>
+        </footer>
+    </div>
+  </body>
+</html>
