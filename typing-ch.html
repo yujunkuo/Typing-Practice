@@ -228,10 +228,10 @@
               j++;
             }
             // 漏打字
-            else if(question[i+1] == answer[j]){
+            else {
               error++;
               i++;
-            }
+            } 
           }
           // 判斷最後一個字元是否正確
           if(answer[j] == question[i]){
@@ -275,7 +275,7 @@
                     flag = false;
                     var question = $("#question").val();
                     var answer = $("#answer").val();
-                    clearInterval(timeInterval);
+                    //clearInterval(timeInterval);
                     $(".content").html(
                       `
                       <div class="text-center text-info" style="padding-top: 150px; padding-bottom: 200px;">
