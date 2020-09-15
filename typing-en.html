@@ -201,18 +201,18 @@ relative or successor of the first man. `;
       const e_list = [e1, e2, e3];
 
         function getResult(question, answer){
-          var temp = Array(question.length+1).fill(0)
+          var temp = Array(question.length+1).fill(0);
           var dp = [];
-          dp = Array(answer.length+1).fill(temp)
-          for (let i=1; i<question.length+1; i++) {
+          dp = Array(answer.length+1).fill(temp);
+          for (let i=1; i < answer.length+1; i++) {
             dp[i][0] = 0;
           }
-          for (let i=1; i<answer.length+1; i++) {
+          for (let i=1; i < question.length+1; i++) {
             dp[0][i] = 0;
           }
-          for (let i=1; i<question.length+1; i++) {
-            for (let j=1; j<answer.length+1; j++) {
-              if (question[i-1] == answer[j-1]){
+          for (let i=1; i < answer.length+1; i++) {
+            for (let j=1; j < question.length+1; j++) {
+              if (answer[i-1] == question[j-1]){
                 dp[i][j] = dp[i-1][j-1] + 1;
               }
               else{
@@ -220,7 +220,7 @@ relative or successor of the first man. `;
               }
             }
           } 
-          var result = dp[question.length][answer.length];
+          var result = dp[answer.length][question.length];
           var wordPerMin = Math.round(result / 10);
           return wordPerMin;
         }
